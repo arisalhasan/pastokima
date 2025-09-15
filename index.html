@@ -1,10 +1,66 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Canonical (one only) -->
+    <link rel="canonical" href="https://pastokima.com/" />
+
+    <title>Pas To Kima — Restaurant in Argaka, Cyprus | Mediterranean Grill & Seafood</title>
+    <meta name="description" content="Seaside grills, vibrant salads and generous plates in Argaka. Open 12:00–22:00 (Tue closed). Traditional Greek Night every Thursday." />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0F4C5C" />
+
+    <!-- Favicon / icons -->
+    <link rel="icon" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:site_name" content="Pas To Kima" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pastokima.com/" />
+    <meta property="og:title" content="Pas To Kima — By the Wave" />
+    <meta property="og:description" content="Seaside grills, vibrant salads and generous plates in Argaka." />
+    <meta property="og:image" content="https://pastokima.com/gallery/hero.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pas To Kima — By the Wave" />
+    <meta name="twitter:description" content="Seaside grills, vibrant salads and generous plates in Argaka." />
+    <meta name="twitter:image" content="https://pastokima.com/gallery/hero.jpeg" />
+
+    <!-- Restaurant schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Pas To Kima",
+      "url": "https://pastokima.com/",
+      "image": "https://pastokima.com/gallery/hero.jpeg",
+      "telephone": "+35797717607",
+      "priceRange": "€€",
+      "servesCuisine": ["Mediterranean","Cypriot","Seafood","Grill"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "E704",
+        "addressLocality": "Argaka",
+        "postalCode": "8873",
+        "addressCountry": "CY"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 35.054, "longitude": 32.492 },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "12:00", "closes": "22:00" }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/pastokimarestaurant/",
+        "https://www.facebook.com/pastokima/",
+        "https://www.tiktok.com/@pastokimarestaurant"
+      ],
+      "menu": "https://pastokima.com/#menu"
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
