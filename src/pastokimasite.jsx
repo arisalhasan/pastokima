@@ -403,21 +403,18 @@ React.useEffect(() => {
 
       {/* NEW: brand + location paragraph for search */}
       <p className="mt-4">
-        <strong>Pas To Kima</strong> is a seaside <strong>restaurant in Argaka, Cyprus</strong>,
-        serving Mediterranean grill and seafood. Join us for generous <strong>platters</strong>,
-        fresh salads, and our <strong>Traditional Greek Night</strong> every Thursday.
-      </p>
+      <strong>Pas To Kima</strong> is a seaside <strong>restaurant in Argaka, Cyprus</strong>.
+      We cook simple Mediterranean food with Cypriot soul—good olive oil, fresh herbs,
+      charcoal-grilled meats and fish, vibrant salads, and generous <strong>platters</strong>.
+    </p>
+    <p className="mt-4">
+      Every <strong>Thursday</strong> we host a <strong>Traditional Greek Night</strong> with
+      live singers and dancers—come for the food, stay for the kefi!
+    </p>
+    <p className="mt-4">
+  Small, friendly, and right by the wave—come hungry, leave happy.
+</p>
 
-      {/* existing paragraphs */}
-      <p className="mt-4">
-        Pas To Kima (“by the wave”) is a small, friendly restaurant in Argaka. We cook simple
-        Mediterranean food with Cypriot soul: good olive oil, fresh herbs, bright salads, and meat
-        or fish over charcoal. Generous portions, clean flavours, warm welcome.
-      </p>
-      <p className="mt-4">
-        Every <strong>Thursday</strong> we host a <strong>Traditional Greek Night</strong> with live
-        singers and dancers performing classic dances—come for the food, stay for the kefi!
-      </p>
     </div>
     <div className="space-y-6">
       <blockquote className="card bg-[var(--shell)]">
