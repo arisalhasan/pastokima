@@ -374,10 +374,10 @@ React.useEffect(() => {
             <p className="mt-4 text-base md:text-lg leading-relaxed max-w-prose">Seaside grills, vibrant salads and generous plates. Open <strong>12:00–22:00</strong> (Tue closed). Come hungry, leave happy.</p>
 
             {/* Chips */}
-            <ul className="mt-5 flex flex-wrap gap-2">
-              <li className="chip">Charcoal Grill</li>
-              <li className="chip">Mezze & Salads</li>
-              <li className="chip">Seafood</li>
+            <ul className="mt-5 list-disc pl-5 text-white/90 grid gap-1">
+              <li>Charcoal grill</li>
+              <li>Platters & Salads</li>
+              <li>Seafood</li>
             </ul>
 
             {/* CTAs */}
@@ -885,9 +885,17 @@ function Style() {
       }
 
       /* Keep photos centered in the portrait frame; change to 'left center' if you prefer */
-.carousel--split .slide > img{ object-position: left center; }
-        object-position: center center;
+      .carousel--split .slide > img{ object-position: left center; }
+              object-position: center center;
+            }
+              /* Make hero bullets neat on dark card */
+      .hero .list-disc {
+        margin-top: .9rem; 
       }
+      .hero .list-disc li {
+        line-height: 1.5;
+      }
+
 
 
       `}</style>
