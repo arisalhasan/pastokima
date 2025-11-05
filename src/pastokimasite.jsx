@@ -371,7 +371,7 @@ React.useEffect(() => {
           <div className="p-6 md:p-8 rounded-2xl bg-[var(--navy)]/70 text-white shadow-2xl backdrop-blur-sm">
             <p className="text-sm tracking-wider uppercase opacity-90">Pas To Kima • Argaka</p>
             <h1 className="font-heading font-semibold text-4xl md:text-6xl leading-[1.05] mt-2">Mediterranean cooking,<br className="hidden md:block"/> Cypriot heart.</h1>
-            <p className="mt-4 text-base md:text-lg leading-relaxed max-w-prose">Seaside grills, vibrant salads and generous plates. Open <strong>12:00–22:00</strong> (Tue closed). Come hungry, leave happy.</p>
+            <p className="mt-4 text-base md:text-lg leading-relaxed max-w-prose">Seaside grills, vibrant salads and generous plates. <strong>Closed for the season — reopening early March.</strong></p>
 
             {/* Chips */}
             <ul className="mt-5 list-disc pl-5 text-white/90 grid gap-1">
@@ -424,7 +424,7 @@ React.useEffect(() => {
       <div className="card">
         <h3 className="font-semibold">At a glance</h3>
         <ul className="mt-3 grid gap-2 text-sm">
-          <li>Open 12:00–22:00 (Tuesday closed)</li>
+          <li><strong>Seasonal break:</strong> Closed until early March</li>
           <li><strong>Every Thursday: Traditional Greek Night</strong> (live singers & dancers)</li>
           <li>Charcoal grill, seafood, salads, burgers</li>
           <li>Seaside, relaxed & family-friendly</li>
@@ -534,12 +534,13 @@ React.useEffect(() => {
             <h3 className="mt-4 font-semibold">Phone</h3>
             <p className="mt-2">+357 97 717607</p>
             <h3 className="mt-4 font-semibold">Open Hours</h3>
+            <p className="mt-1 text-[13px] px-2 py-1 rounded bg-yellow-100 text-yellow-900 inline-block">Seasonal break: Closed until early March</p>
             <table className="w-full mt-2 text-sm">
               <tbody>
                 {hoursData.map(([d, h]) => (
                   <tr key={d} className="border-t">
                     <td className="py-2 pr-3 font-medium">{d}</td>
-                    <td className="py-2">{h}</td>
+                    <td className="py-2">Closed</td>
                   </tr>
                 ))}
               </tbody>
