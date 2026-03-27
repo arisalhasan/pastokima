@@ -1,6 +1,6 @@
 import React from 'react';
 
-// ===== Pas To Kima — One‑pager (React, plain JS) =====
+// ===== Pas To Kima - One‑pager (React, plain JS) =====
 export default function PasToKimaSite() {
   // ====== DATA (verbatim from script) ======
   const beliefs = [
@@ -142,16 +142,16 @@ export default function PasToKimaSite() {
       { n: 'House wine by the glass (white/rosé/red)', p: 3.5 },
       { n: 'Small bottle 187ml (white/rosé)', p: 4.0 },
       { n: 'Carafe (white/rosé/red)', p: 10.5 },
-      { n: 'White — Xynisteri', d: 'Vasilikon 22 · Kalamos (dry) 21 · Kalamos (medium sweet) 21 · Kolios ‘Persefoni’ 22 · Kyperounta ‘Petritis’ 28 · Tsangarides 21' },
+      { n: 'White - Xynisteri', d: 'Vasilikon 22 · Kalamos (dry) 21 · Kalamos (medium sweet) 21 · Kolios ‘Persefoni’ 22 · Kyperounta ‘Petritis’ 28 · Tsangarides 21' },
       { n: 'Vasilissa', d: 'Tsangarides Organic 28' },
       { n: 'Chardonnay', d: 'Tsangarides Organic 28 · Kyperounta ‘Alimos’ 38' },
       { n: 'Sauvignon Blanc', d: 'Tsiakkas 36 · Vasilikon ‘Omma’ 32' },
       { n: 'Rosé', d: 'Tsangarides Shiraz 21 · Kalamos ‘Demetra’ Dry Cab Sauv 21 · Kalamos ‘Demetra’ Medium Dry Cab Sauv 21 · Vasilikon ‘Enalia’ Maratheftiko Shiraz 21' },
-      { n: 'Red — Cabernet Sauvignon', d: 'Vasilikon ‘Methi’ 38' },
-      { n: 'Red — Merlot', d: 'Kalamos 25 · Vlassides 36' },
-      { n: 'Red — Shiraz', d: 'Kyperounta ‘Skopos’ 38' },
-      { n: 'Red — Maratheftiko', d: 'Tsangarides Organic 32 · Kolios ‘Agios Fotios’ 22' },
-      { n: 'Red — Blends', d: 'Vasilikon ‘Agios Onoufrios’ 21 · Tsangarides ‘Agios Efraim’ 21' },
+      { n: 'Red - Cabernet Sauvignon', d: 'Vasilikon ‘Methi’ 38' },
+      { n: 'Red - Merlot', d: 'Kalamos 25 · Vlassides 36' },
+      { n: 'Red - Shiraz', d: 'Kyperounta ‘Skopos’ 38' },
+      { n: 'Red - Maratheftiko', d: 'Tsangarides Organic 32 · Kolios ‘Agios Fotios’ 22' },
+      { n: 'Red - Blends', d: 'Vasilikon ‘Agios Onoufrios’ 21 · Tsangarides ‘Agios Efraim’ 21' },
     ],
   };
 
@@ -213,18 +213,18 @@ React.useEffect(() => {
 }, []);
 
 
-  // Hours data (12:00–22:00; Tuesday closed)
+  // Hours data (12:00 PM - 10:00 PM; Tuesday closed)
   const hoursData = [
-    ['Mon', '12:00–22:00'],
+    ['Mon', '12:00 PM - 10:00 PM'],
     ['Tue', 'Closed'],
-    ['Wed', '12:00–22:00'],
-    ['Thu', '12:00–22:00'],
-    ['Fri', '12:00–22:00'],
-    ['Sat', '12:00–22:00'],
-    ['Sun', '12:00–22:00'],
+    ['Wed', '12:00 PM - 10:00 PM'],
+    ['Thu', '12:00 PM - 10:00 PM'],
+    ['Fri', '12:00 PM - 10:00 PM'],
+    ['Sat', '12:00 PM - 10:00 PM'],
+    ['Sun', '12:00 PM - 10:00 PM'],
   ];
 
-  // Address & Map — lock to place name to avoid road label like "E704"
+  // Address & Map - lock to place name to avoid road label like "E704"
   const addressStr = 'Pas To Kima, E704, Argaka 8873, Cyprus';
   const mapQuery = encodeURIComponent(addressStr);
   const mapSrc = `https://www.google.com/maps?hl=en&q=${mapQuery}&z=16&output=embed`;
@@ -371,7 +371,7 @@ React.useEffect(() => {
           <div className="p-6 md:p-8 rounded-2xl bg-[var(--navy)]/70 text-white shadow-2xl backdrop-blur-sm">
             <p className="text-sm tracking-wider uppercase opacity-90">Pas To Kima • Argaka</p>
             <h1 className="font-heading font-semibold text-4xl md:text-6xl leading-[1.05] mt-2">Mediterranean cooking,<br className="hidden md:block"/> Cypriot heart.</h1>
-            <p className="mt-4 text-base md:text-lg leading-relaxed max-w-prose">Seaside grills, vibrant salads and generous plates. <strong>Closed for the season — reopening early March.</strong></p>
+            <p className="mt-4 text-base md:text-lg leading-relaxed max-w-prose">Seaside grills, vibrant salads and generous plates.</p>
 
             {/* Chips */}
             <ul className="mt-5 list-disc pl-5 text-white/90 grid gap-1">
@@ -404,27 +404,26 @@ React.useEffect(() => {
       {/* NEW: brand + location paragraph for search */}
       <p className="mt-4">
       <strong>Pas To Kima</strong> is a seaside <strong>restaurant in Argaka, Cyprus</strong>.
-      We cook simple Mediterranean food with Cypriot soul—good olive oil, fresh herbs,
+      We cook simple Mediterranean food with Cypriot soul: good olive oil, fresh herbs,
       charcoal-grilled meats and fish, vibrant salads, and generous <strong>platters</strong>.
     </p>
     <p className="mt-4">
       Every <strong>Thursday</strong> we host a <strong>Traditional Greek Night</strong> with
-      live singers and dancers—come for the food, stay for the kefi!
+      live singers and dancers; come for the food, stay for the kefi!
     </p>
     <p className="mt-4">
-  Small, friendly, and right by the wave—come hungry, leave happy.
+  Small, friendly, and right by the wave. Come hungry, leave happy.
 </p>
 
     </div>
     <div className="space-y-6">
       <blockquote className="card bg-[var(--shell)]">
-        <p className="text-lg md:text-xl font-medium">“Good food, good mood — always by the wave.”</p>
-        <footer className="mt-3 opacity-70">— The Pas To Kima Family</footer>
+        <p className="text-lg md:text-xl font-medium">“Good food, good mood, always by the wave.”</p>
+        <footer className="mt-3 opacity-70">The Pas To Kima Family</footer>
       </blockquote>
       <div className="card">
         <h3 className="font-semibold">At a glance</h3>
         <ul className="mt-3 grid gap-2 text-sm">
-          <li><strong>Seasonal break:</strong> Closed until early March</li>
           <li><strong>Every Thursday: Traditional Greek Night</strong> (live singers & dancers)</li>
           <li>Charcoal grill, seafood, salads, burgers</li>
           <li>Seaside, relaxed & family-friendly</li>
@@ -534,18 +533,17 @@ React.useEffect(() => {
             <h3 className="mt-4 font-semibold">Phone</h3>
             <p className="mt-2">+357 97 717607</p>
             <h3 className="mt-4 font-semibold">Open Hours</h3>
-            <p className="mt-1 text-[13px] px-2 py-1 rounded bg-yellow-100 text-yellow-900 inline-block">Seasonal break: Closed until early March</p>
             <table className="w-full mt-2 text-sm">
               <tbody>
                 {hoursData.map(([d, h]) => (
                   <tr key={d} className="border-t">
                     <td className="py-2 pr-3 font-medium">{d}</td>
-                    <td className="py-2">Closed</td>
+                    <td className="py-2">{h}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <p className="mt-3 text-sm opacity-80">No online bookings — please call for table availability.</p>
+            <p className="mt-3 text-sm opacity-80">No online bookings. Please call for table availability.</p>
           </div>
           <div className="card lg:col-span-2 p-0 map-card">
             <div className="w-full rounded-[inherit] overflow-hidden">
@@ -600,7 +598,7 @@ React.useEffect(() => {
       <section className="section" aria-labelledby="accessibility">
         <div className="card card--dark">
           <h2 id="accessibility" className="h2 text-white">Accessibility & Allergen Info</h2>
-          <p className="mt-3">We’re committed to welcoming every guest. Step‑free access is available to key areas. Please speak to us about allergens—many dishes can be prepared without gluten or dairy on request.</p>
+          <p className="mt-3">We’re committed to welcoming every guest. Step‑free access is available to key areas. Please speak to us about allergens. Many dishes can be prepared without gluten or dairy on request.</p>
         </div>
       </section>
 
@@ -637,7 +635,7 @@ function HeadBits() {
   return (
     <>
       {/* No external fonts to avoid permission prompts */}
-      <title>Pas To Kima — By the Wave</title>
+      <title>Pas To Kima - By the Wave</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#0F4C5C" />
     </>
@@ -972,7 +970,7 @@ function ThursdayBanner() {
     <div className="bg-[var(--deep-ocean)] text-white">
       <div className="mx-auto max-w-[1200px] px-4 py-2 text-sm flex items-center gap-3">
         <span role="img" aria-label="music">🎶</span>
-        <span><strong>Tonight:</strong> Traditional Greek Night — live singers & dancers!</span>
+        <span><strong>Tonight:</strong> Traditional Greek Night - live singers & dancers!</span>
         <button className="ml-auto underline decoration-white/60 hover:opacity-80" onClick={dismiss}>Hide</button>
       </div>
     </div>
