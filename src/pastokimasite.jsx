@@ -14,10 +14,9 @@ export default function PasToKimaSite() {
 
   const menu = {
     Starters: [
-      { n: 'Italian bruschetta', d: 'fresh tomatoes, onions, garlic, fresh basil & grated parmesan', p: 9.5 },
-      { n: 'Burrata on bruschetta', d: 'tomato, rucola & green pesto', p: 11.5 },
-      { n: 'Melanzane alla Parmigiana', d: 'eggplant stuffed with tomato sauce & grated parmesan', p: 11.5 },
-      { n: 'Nachos', d: 'served with guacamole & sour cream', p: 10.5 },
+      { n: 'Italian bruschetta', d: 'fresh tomatoes, onions, garlic, fresh basil, green pesto & grated parmesan', p: 9.5 },
+      { n: 'Fried eggplant with tahini', d: '', p: 9.5 },
+      { n: 'Nachos with cheese', d: 'served with guacamole & sour cream', p: 10.5 },
       { n: 'Garlic bread with cheese', d: '', p: 5.5 },
       { n: 'Mussels with garlic butter', d: '', p: 10.5 },
       { n: 'King prawns in garlic butter', d: '', p: 13.0 },
@@ -28,14 +27,15 @@ export default function PasToKimaSite() {
       { n: 'Vegetable spring roll', d: 'with sweet chili sauce', p: 9.5 },
       { n: 'Stuffed mushroom', d: 'mixed cheeses & fresh herbs', p: 9.5 },
       { n: 'Falafel with tahini', d: '', p: 9.5 },
-      { n: 'Zucchini balls with tzatziki', d: '', p: 9.0 },
-      { n: 'Dips (each)', d: 'Tzatziki, Tahini, Taramosalata, Hummus, Olives', p: 4.0 },
+      { n: 'Zucchini balls with tzatziki', d: '', p: 9.5 },
+      { n: 'Dips (each)', d: 'Tzatziki, Tahini, Taramosalata, Hummus, Spicy cheese, Olives, Eggplant salad', p: 4.0 },
     ],
     Salads: [
       { n: 'Village salad', d: 'lettuce, cabbage, tomato, cucumber, capers, onion, feta, olive oil & vinegar', p: 9.0 },
-      { n: 'Greek salad', d: 'tomato, cucumber, green pepper, onion, feta & olive oil', p: 11.0 },
+      { n: 'Greek salad', d: 'tomato, cucumber, green pepper, onion, feta, olive oil & vinegar', p: 11.0 },
       { n: 'Caesar salad', d: 'lettuce, bacon, grilled chicken, croutons, parmesan flakes, Caesar dressing', p: 13.0 },
-      { n: 'Rucola salad', d: 'baby rucola, dried fruits, cherry tomatoes, goat’s cheese, balsamic vinaigrette & parmesan flakes', p: 13.5 },
+      { n: 'Rucola salad', d: 'baby rucola, dried fruits, cherry tomatoes, goat’s cheese, balsamic vinaigrette, olive oil & parmesan flakes', p: 13.5 },
+      { n: 'Burrata on bruschetta', d: 'cherry tomatoes, rucola, olive oil & green pesto', p: 11.5 },
     ],
     Grill: [
       { n: 'Pork souvlaki', d: 'served with chips & salad', p: 13.5 },
@@ -44,7 +44,7 @@ export default function PasToKimaSite() {
       { n: 'Mixed pork souvlaki with sheftalia', d: 'served with chips & salad', p: 14.0 },
       { n: 'Mixed chicken souvlaki with sheftalia', d: 'served with chips & salad', p: 14.5 },
       { n: 'Pork chop', d: 'served with chips & salad', p: 17.5 },
-      { n: 'Meat platter for 2', d: 'halloumi, sausage, mushroom, chicken souvlaki, pork souvlaki, sheftalies, lamb chops, chips & tzatziki', p: 44.0 },
+      { n: 'Meat platter for 2', d: 'halloumi, sausage, mushroom, chicken souvlaki, pork souvlaki, sheftalia, wine pork belly, chips & tzatziki', p: 44.0 },
     ],
     Burgers: [
       { n: 'Beefburger with chips', d: 'tomato, lettuce, onion, pickle & Pas To Kima sauce (2×125g)', p: 14.5 },
@@ -54,8 +54,9 @@ export default function PasToKimaSite() {
     ],
     Pasta: [
       { n: 'Seafood pasta', d: 'black linguine, king prawns & mussels, fresh cream, tomato & ouzo', p: 22.5 },
-      { n: 'Fresh ravioli', d: 'stuffed with crab & lobster meat, red pesto', p: 22.5 },
-      { n: 'Vegan spaghetti', d: 'peppers, mushrooms, onion, garlic & tomato sauce', p: 14.5 },
+      { n: 'Fresh ravioli', d: 'stuffed with crab & lobster meat, herbs & red pesto', p: 22.5 },
+      { n: 'Vegan spaghetti', d: 'colored peppers, mushrooms, onion, garlic, herbs & tomato sauce', p: 14.5 },
+      { n: 'Spaghetti Bolognese', d: '', p: 14.5 },
     ],
     International: [
       { n: 'Pork fillet teriyaki', d: 'with rice', p: 17.5 },
@@ -68,7 +69,16 @@ export default function PasToKimaSite() {
       { n: 'Salmon', d: 'teriyaki OR olive & garlic; served with vegetables & rice', p: 19.5 },
       { n: 'Fresh fried calamari', d: 'with chips', p: 19.0 },
       { n: 'Grilled king prawns', d: 'garlic butter, vegetables & rice', p: 27.5 },
-      { n: 'Seafood platter for 2', d: 'king prawns, mussels, fresh fried calamari, rice & chips', p: 46.0 },
+      { n: 'Seafood platter for 2', d: 'king prawns, mussels, fresh fried calamari, rice & chips', p: 44.0 },
+    ],
+    Vegan: [
+      { n: 'Fried eggplant with tahini', d: '', p: 11.5 },
+      { n: 'Vegetable spring roll', d: 'served with sweet chili sauce', p: 9.5 },
+      { n: 'Falafel with tahini', d: '', p: 9.5 },
+      { n: 'Dips (each)', d: 'Tahini, Hummus, Olives', p: 4.0 },
+      { n: 'Vegan spaghetti', d: 'colored peppers, mushrooms, onion, garlic, herbs & tomato sauce', p: 14.5 },
+      { n: 'Vegetarian kebab', d: 'seasonal vegetables served with vegetables & rice', p: 14.5 },
+      { n: 'Zucchini balls with hummus', d: '', p: 9.5 },
     ],
     Kids: [
       { n: 'Beefburger with chips', d: 'tomato & lettuce (125g)', p: 10.0 },
@@ -83,7 +93,7 @@ export default function PasToKimaSite() {
       { n: 'Carrot cake', d: '', p: 6.0 },
       { n: 'Cheesecake', d: '', p: 6.5 },
       { n: 'Chocolate cake', d: '', p: 6.5 },
-      { n: 'Panacota', d: '', p: 6.5 },
+      { n: 'Panacota', d: '', p: 5.5 },
       { n: 'Sweet of the day', d: '', p: 6.5 },
       { n: 'Seasonal fruits', d: '', p: 6.0 },
     ],
@@ -99,10 +109,10 @@ export default function PasToKimaSite() {
     'Beer & Cider': [
       { n: 'Half pint (Keo, Carlsberg, Leon)', p: 2.75 },
       { n: 'Pint (Keo, Carlsberg, Leon)', p: 3.75 },
-      { n: 'Small beer 330ml', d: 'Μηλίτσα apple; strawberry & lime; Corona; Somersby; Budweiser; Heineken', p: 3.5 },
+      { n: 'Small beer 330ml', d: 'Militsa apple; strawberry & lime; Corona; Somersby; Heineken', p: 3.5 },
       { n: 'Beer can 500ml', d: 'Guinness, Strongbow, Kopparberg, John Smith’s', p: 5.0 },
       { n: 'Large bottle 630ml (Keo, Carlsberg, Leon)', p: 4.0 },
-      { n: 'Carlsberg 0% 330ml', p: 3.5 },
+      { n: 'Beer 0% alc 330ml', p: 3.5 },
       { n: 'Mixer (soft drinks, juices)', p: 1.5 },
     ],
     Coffees: [
@@ -131,12 +141,7 @@ export default function PasToKimaSite() {
       { n: 'Liqueurs', d: 'Coffee, Tia Maria, Baileys, Malibu, Aperol, Campari, Limoncello, Disaronno, Cointreau, Benedictine, Amaretto, Orange, Triple Sec, Peach Schnapps, Cherry, Elderflower, Strawberry, Banana, Blue Curacao, North Smirnoff', p: 5.0 },
       { n: 'Ouzo 1/4', p: 13.0 },
       { n: 'Zivania 1/4', p: 13.0 },
-    ],
-    Prosecco: [
-      { n: 'Glass (white/rosé)', p: 5.0 },
-      { n: 'Bottle white (dry)', p: 23.0 },
-      { n: 'Bottle white (extra dry)', p: 27.0 },
-      { n: 'Bottle rosé', p: 23.0 },
+      { n: 'Shot', p: 3.0 },
     ],
     Wines: [
       { n: 'House wine by the glass (white/rosé/red)', p: 3.5 },
@@ -147,6 +152,7 @@ export default function PasToKimaSite() {
       { n: 'Chardonnay', d: 'Tsangarides Organic 28 · Kyperounta ‘Alimos’ 38' },
       { n: 'Sauvignon Blanc', d: 'Tsiakkas 36 · Vasilikon ‘Omma’ 32' },
       { n: 'Rosé', d: 'Tsangarides Shiraz 21 · Kalamos ‘Demetra’ Dry Cab Sauv 21 · Kalamos ‘Demetra’ Medium Dry Cab Sauv 21 · Vasilikon ‘Enalia’ Maratheftiko Shiraz 21' },
+      { n: 'Red - Homemade wine', d: 'Chrysallis Pas To Kima Homemade wine 17' },
       { n: 'Red - Cabernet Sauvignon', d: 'Vasilikon ‘Methi’ 38' },
       { n: 'Red - Merlot', d: 'Kalamos 25 · Vlassides 36' },
       { n: 'Red - Shiraz', d: 'Kyperounta ‘Skopos’ 38' },
@@ -166,6 +172,7 @@ export default function PasToKimaSite() {
     Pasta: '🍝',
     International: '🌍',
     Fish: '🐟',
+    Vegan: '🌱',
     Kids: '🧒',
     Desserts: '🍰',
   };
@@ -175,7 +182,6 @@ export default function PasToKimaSite() {
     'Beer & Cider': '🍺',
     Coffees: '☕️',
     Spirits: '🥃',
-    Prosecco: '🥂',
     Wines: '🍷',
   };
 
@@ -259,6 +265,19 @@ React.useEffect(() => {
 
   // Helpers
   const currency = (n) => `€${n.toFixed(2)}`;
+  const parsePricedOptions = (text = '') => {
+    const parts = text.split(' · ').map((part) => part.trim()).filter(Boolean);
+    const priced = parts.map((part) => {
+      const match = part.match(/^(.*\D)\s+(\d+(?:\.\d{1,2})?)$/);
+      return match ? { label: match[1].trim(), price: Number(match[2]) } : null;
+    });
+    return priced.every(Boolean) ? priced : [];
+  };
+
+  const drinkPrice = (item) => {
+    if (typeof item.p !== 'number') return null;
+    return item.p2 ? `${currency(item.p)} / ${currency(item.p2)}` : currency(item.p);
+  };
 
   // ==== Self-tests (JS) ====  (These only run in the browser)
   React.useEffect(() => {
@@ -483,7 +502,7 @@ React.useEffect(() => {
                 <h3 className="font-semibold text-[var(--navy)]">{m.n}</h3>
                 {m.d && <p className="mt-1 text-sm opacity-80">{m.d}</p>}
               </div>
-              <div className="font-semibold text-[var(--deep-ocean)]">{typeof m.p === 'number' ? currency(m.p) : m.p}</div>
+              <div className="price-badge">{typeof m.p === 'number' ? currency(m.p) : m.p}</div>
             </article>
           ))}
         </div>
@@ -506,17 +525,31 @@ React.useEffect(() => {
                 <span className="transition-transform group-open:rotate-180" aria-hidden>⌄</span>
               </summary>
 
-              <div className="px-4 pb-4 md:px-5 md:pb-5 grid sm:grid-cols-2 gap-3">
-                {items.map((d, i) => (
-                  <div key={i} className="flex items-start justify-between gap-3 border-t pt-3">
-                    <div>
-                      <div className="font-medium">{d.n}</div>
-                      {d.d && <div className="text-sm opacity-80">{d.d}</div>}
+              <div className={`px-4 pb-4 md:px-5 md:pb-5 grid gap-3 ${cat === 'Wines' ? 'wine-list' : 'sm:grid-cols-2'}`}>
+                {items.map((d, i) => {
+                  const optionPrices = cat === 'Wines' && d.d ? parsePricedOptions(d.d) : [];
+                  const price = drinkPrice(d);
+                  return (
+                    <div key={i} className="drink-row">
+                      <div className="min-w-0 flex-1">
+                        <div className="font-medium">{d.n}</div>
+                        {optionPrices.length > 0 ? (
+                          <div className="price-list">
+                            {optionPrices.map((option) => (
+                              <div key={`${d.n}-${option.label}`} className="price-list__row">
+                                <span>{option.label}</span>
+                                <span className="price-badge price-badge--small">{currency(option.price)}</span>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          d.d && <div className="text-sm opacity-80">{d.d}</div>
+                        )}
+                      </div>
+                      {price && <div className="price-badge price-badge--small">{price}</div>}
                     </div>
-                    {d.p && <div className="font-semibold">{currency(d.p)}</div>}
-                    {d.p2 && <div className="text-sm">/ {currency(d.p2)}</div>}
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </details>
           ))}
@@ -771,6 +804,52 @@ function Style() {
       .card{background:#fff; border:1px solid #00000010; border-radius:20px; padding:1rem; box-shadow:0 4px 14px rgba(0,0,0,.06);} 
       .card--dark{ background: linear-gradient(160deg, #0F4C5C 0%, #0A2342 100%) !important; color:#fff !important; position:relative; overflow:hidden; }
       .menu-card{display:flex; justify-content:space-between; gap:1rem; background:var(--shell); border:1px solid #00000010; border-radius:18px; padding:1rem;}
+      .price-badge{
+        align-self:flex-start;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        min-width:74px;
+        padding:.38rem .62rem;
+        border-radius:999px;
+        background:var(--deep-ocean);
+        color:#fff;
+        font-weight:800;
+        line-height:1;
+        box-shadow:0 6px 14px rgba(15,76,92,.18);
+        white-space:nowrap;
+      }
+      .price-badge--small{min-width:64px; padding:.32rem .54rem; font-size:.86rem;}
+      .drink-row{
+        display:flex;
+        align-items:flex-start;
+        justify-content:space-between;
+        gap:1rem;
+        border-top:1px solid #00000012;
+        padding-top:.85rem;
+      }
+      .price-list{
+        display:grid;
+        gap:.45rem;
+        margin-top:.55rem;
+      }
+      .price-list__row{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:.75rem;
+        padding:.45rem .55rem;
+        border:1px solid #00000010;
+        border-radius:10px;
+        background:#FFF8EF;
+        color:var(--navy);
+        font-size:.9rem;
+      }
+      @media (max-width:640px){
+        .menu-card,.drink-row{gap:.75rem;}
+        .price-badge{min-width:auto;}
+        .price-list__row{align-items:flex-start;}
+      }
       .tab{padding:.55rem .9rem; border-radius:999px; border:1px solid #00000022; background:#fff; transition:transform .12s ease;}
       .tab-active{background: linear-gradient(135deg,#2E86AB,#66D6D1); color:#063141; border-color: transparent; box-shadow:0 6px 16px rgba(46,134,171,.25);} 
       .tab:focus-visible{outline:2px solid var(--seafoam); outline-offset:2px;}
