@@ -72,7 +72,7 @@ export default function PasToKimaSite() {
       { n: 'Seafood platter for 2', d: 'king prawns, mussels, fresh fried calamari, rice & chips', p: 46.0 },
     ],
     Vegan: [
-      { n: 'Fried eggplant with tahini', d: '', p: 11.5 },
+      { n: 'Fried eggplant with tahini', d: '', p: 9.5 },
       { n: 'Vegetable spring roll', d: 'served with sweet chili sauce', p: 9.5 },
       { n: 'Falafel with tahini', d: '', p: 9.5 },
       { n: 'Dips (each)', d: 'Tahini, Hummus, Olives', p: 4.0 },
