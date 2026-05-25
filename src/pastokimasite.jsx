@@ -69,7 +69,7 @@ export default function PasToKimaSite() {
       { n: 'Salmon', d: 'teriyaki OR olive & garlic; served with vegetables & rice', p: 19.5 },
       { n: 'Fresh fried calamari', d: 'with chips', p: 19.0 },
       { n: 'Grilled king prawns', d: 'garlic butter, vegetables & rice', p: 27.5 },
-      { n: 'Seafood platter for 2', d: 'king prawns, mussels, fresh fried calamari, rice & chips', p: 44.0 },
+      { n: 'Seafood platter for 2', d: 'king prawns, mussels, fresh fried calamari, rice & chips', p: 46.0 },
     ],
     Vegan: [
       { n: 'Fried eggplant with tahini', d: '', p: 11.5 },
