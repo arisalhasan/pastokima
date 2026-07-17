@@ -219,10 +219,10 @@ React.useEffect(() => {
 }, []);
 
 
-  // Hours data (12:00 PM - 10:00 PM; Tuesday closed)
+  // Hours data (12:00 PM - 10:00 PM daily)
   const hoursData = [
     ['Mon', '12:00 PM - 10:00 PM'],
-    ['Tue', 'Closed'],
+    ['Tue', '12:00 PM - 10:00 PM'],
     ['Wed', '12:00 PM - 10:00 PM'],
     ['Thu', '12:00 PM - 10:00 PM'],
     ['Fri', '12:00 PM - 10:00 PM'],
@@ -285,7 +285,7 @@ React.useEffect(() => {
       console.assert(currency(2.5) === '€2.50', 'currency() formats two decimals');
       console.assert(categories.includes('Starters'), "Menu includes 'Starters'");
       console.assert(Object.keys(drinks).length > 0, 'Drinks not empty');
-      console.assert(hoursData.find(([d]) => d === 'Tue')[1] === 'Closed', 'Tuesday Closed');
+      console.assert(hoursData.find(([d]) => d === 'Tue')[1] === '12:00 PM - 10:00 PM', 'Tuesday hours set');
       console.assert(typeof mapSrc === 'string' && mapSrc.includes('google.com/maps'), 'Map src looks valid');
       console.assert(menu.Starters.length > 0 && drinks.Coffees.length >= 1, 'Menu & Drinks contain items');
       // Added tests
