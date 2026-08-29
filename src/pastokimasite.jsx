@@ -219,10 +219,10 @@ React.useEffect(() => {
 }, []);
 
 
-  // Hours data (12:00 PM - 10:00 PM daily)
+  // Hours data (Tuesday closed; all other days 12:00 PM - 10:00 PM)
   const hoursData = [
     ['Mon', '12:00 PM - 10:00 PM'],
-    ['Tue', '12:00 PM - 10:00 PM'],
+    ['Tue', 'Closed'],
     ['Wed', '12:00 PM - 10:00 PM'],
     ['Thu', '12:00 PM - 10:00 PM'],
     ['Fri', '12:00 PM - 10:00 PM'],
