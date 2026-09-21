@@ -1,0 +1,18 @@
+{
+  "framework": null,
+  "buildCommand": "npm run build:vercel",
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "rewrites": [
+    {"source":"/","destination":"/api/site?route=/"},
+    {"source":"/menu/:path*","destination":"/api/site?route=/menu/"},
+    {"source":"/greek-night/:path*","destination":"/api/site?route=/greek-night/"},
+    {"source":"/gallery/:path*","destination":"/api/site?route=/gallery/"},
+    {"source":"/contact/:path*","destination":"/api/site?route=/contact/"},
+    {"source":"/media/:id","destination":"/api/site?route=/media/:id"}
+  ],
+  "headers": [
+    {"source":"/owner/:path*","headers":[{"key":"X-Robots-Tag","value":"noindex, nofollow"},{"key":"Cache-Control","value":"no-store"},{"key":"X-Frame-Options","value":"DENY"}]},
+    {"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"}]}
+  ]
+}

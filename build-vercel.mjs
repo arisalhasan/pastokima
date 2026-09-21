@@ -1,0 +1,16 @@
+import {readFileSync,writeFileSync,mkdirSync,cpSync} from 'node:fs';
+import {build} from 'esbuild';
+mkdirSync('public/owner',{recursive:true});
+cpSync('dist/client','public',{recursive:true});
+let dashboard=readFileSync('dashboard/index.html','utf8').replace('<script src="/dashboard.js"></script>','<script type="module" src="/owner-auth.js"></script>');
+dashboard=dashboard.replaceAll('Private prototype','Restaurant dashboard').replaceAll('prototype','website');
+dashboard=dashboard.replace(/<a href="\/signout-with-chatgpt[^>]*>Sign out<\/a>/,'');
+writeFileSync('public/owner/index.html',dashboard);
+writeFileSync('public/privacy.html',readFileSync('dashboard/privacy.html','utf8').replaceAll('Authorised editors sign in through ChatGPT.','Authorised editors sign in using their restaurant account with two-factor authentication.').replaceAll('This is a private redesign prototype, separate from pastokima.com.','This website uses Vercel hosting and Supabase for owner authentication, restaurant content and uploaded media.'));
+await build({entryPoints:['dashboard/auth.js'],bundle:true,format:'esm',platform:'browser',target:'es2022',outfile:'public/owner-auth.js'});
+await build({entryPoints:['server/edge-entry.mjs'],bundle:true,format:'esm',platform:'neutral',target:'es2022',outfile:'generated/edge.mjs',external:['@supabase/supabase-js']});
+const edge=readFileSync('generated/edge.mjs','utf8').replace('from "@supabase/supabase-js"','from "npm:@supabase/supabase-js@2.116.0"');writeFileSync('generated/edge.mjs',edge);
+const css='\n.auth-card{max-width:480px;margin:10vh auto;padding:32px;background:#fff;color:#163b43}.auth-card label{display:block;margin:20px 0}.auth-card input{display:block;width:100%;padding:12px;margin-top:6px}.auth-card button{padding:12px 24px}.auth-card img{max-width:240px}.auth-card [hidden]{display:none!important}\n';
+writeFileSync('public/dashboard.css',readFileSync('public/dashboard.css','utf8')+css);
+writeFileSync('public/robots.txt','User-agent: *\nAllow: /\nDisallow: /owner/\nDisallow: /api/\nSitemap: https://pastokima.com/sitemap.xml\n');
+writeFileSync('public/sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+['/','/menu/','/greek-night/','/gallery/','/contact/'].map(path=>`<url><loc>https://pastokima.com${path}</loc></url>`).join('')+'</urlset>');
