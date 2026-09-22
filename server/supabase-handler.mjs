@@ -131,7 +131,7 @@ export function createHandler(db,{allowedOrigins=[],siteOrigin='https://pastokim
       }else if(path==='/admin/restore'){
        if(!Number.isSafeInteger(body.id))throw new Problem('Invalid saved version.');
        const row=await checked(db.from('cms_history').select('revision,content').eq('id',body.id).maybeSingle());if(!row)throw new Problem('Saved version unavailable.',404);
-       const next={};for(const key of Object.keys(schema))next[key]=validateValue(key,row.content[key]);response=json(await propose(db,user,current,next,'Restore content revision '+row.revision));
+       const next={};for(const key of Object.keys(schema)){validateValue(key,row.content[key]);next[key]=row.content[key];}response=json(await propose(db,user,current,next,'Restore content revision '+row.revision));
       }else throw new Problem('Not found.',404);
      }
     }else throw new Problem('Not found.',404);

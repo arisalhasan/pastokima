@@ -54,3 +54,12 @@ test('unpublished previews load assets from the approved dashboard origin',async
  const response=await createHandler(db,{allowedOrigins:[origin]})(new Request('https://backend.example/admin/preview',{method:'POST',headers:{Authorization:'Bearer '+jwt({}),Origin:origin,'X-Restaurant-Request':'dashboard','Content-Type':'application/json'},body:JSON.stringify({id:actor,page:'/'})}));
  assert.equal(response.status,200);assert.ok((await response.json()).html.includes('<base href="https://preview.example/">'));
 });
+
+test('restore validates saved content without inventing whitespace-only price changes',async()=>{
+ const db=database();let saved;
+ const original={...initial};const price=Object.keys(original).find(k=>k.endsWith('.price'));original[price]=original[price].trim()+'\r';
+ const current={...original,'home.intro':'Temporary verification change'};
+ db.from=table=>({select(){return this;},eq(){return this;},async single(){return {data:{revision:1,content:current}};},async maybeSingle(){return {data:table==='cms_owners'?{email:'owner@example.com'}:{revision:0,content:original}};},async insert(value){saved=value;return {data:null};}});
+ const response=await createHandler(db,{allowedOrigins:['https://preview.example']})(new Request('https://backend.example/admin/restore',{method:'POST',headers:{Authorization:'Bearer '+jwt({}),Origin:'https://preview.example','X-Restaurant-Request':'dashboard','Content-Type':'application/json'},body:JSON.stringify({id:1,revision:1})}));
+ assert.equal(response.status,200);const result=await response.json();assert.equal(result.changes.length,1);assert.equal(result.changes[0].key,'home.intro');assert.equal(saved.content[price],original[price]);
+});
