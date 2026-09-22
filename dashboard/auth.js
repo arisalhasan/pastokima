@@ -12,8 +12,10 @@ export async function startOwner(){
  const host=document.createElement('main');host.className='auth-card';host.innerHTML='<a href="/">Pas To Kima</a><h1>Owner sign-in</h1><p>Use your authorised restaurant account.</p><form id="owner-login"><label>Email<input name="email" type="email" autocomplete="username" required></label><label>Password<input name="password" type="password" autocomplete="current-password" required minlength="12"></label><button type="submit">Sign in</button></form><div id="mfa-panel" hidden><h2>Two-factor verification</h2><p id="mfa-help"></p><div id="mfa-qr"></div><form id="mfa-form"><label>Authenticator code<input name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required></label><button type="submit">Verify</button></form></div><p id="auth-message" role="status"></p>';
  const shell=[...document.body.children].filter(x=>x.tagName!=='SCRIPT');shell.forEach(x=>x.hidden=true);document.body.prepend(host);
  const message=host.querySelector('#auth-message');let factor;
+ const reset=document.createElement('button');reset.type='button';reset.textContent='Use a different account';reset.hidden=true;
+ reset.onclick=async()=>{const {error}=await auth.auth.signOut({scope:'local'});if(error){message.textContent=error.message;return;}location.reload();};host.append(reset);
  async function ready(){
-  const {data:{session}}=await auth.auth.getSession();if(!session)return;
+  const {data:{session}}=await auth.auth.getSession();if(!session)return;reset.hidden=false;
   const {data,error}=await auth.auth.mfa.getAuthenticatorAssuranceLevel();if(error)throw error;
   if(data.currentLevel==='aal2'){
    await apiRequest('state');host.remove();shell.forEach(x=>x.hidden=false);

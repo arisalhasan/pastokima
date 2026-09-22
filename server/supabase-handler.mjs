@@ -98,7 +98,7 @@ export function createHandler(db,{allowedOrigins=[],siteOrigin='https://pastokim
      const p=await checked(db.from('cms_proposals').select('content').eq('id',body.id).eq('actor',user.actor).eq('used',false).gte('expires',now()).maybeSingle());
      if(!p)throw new Problem('Preview expired or unavailable.',404);
      const html=render(body.page||'/',await mediaURLs(db,p.content));if(!html)throw new Problem('Unknown page.',404);
-     response=json({html:html.replace('<head>','<head><base href="'+siteOrigin+'/">').replace('<body>','<body><div class="preview-banner">Unpublished preview</div>')});
+     response=json({html:html.replace('<head>','<head><base href="'+(allowed?origin:siteOrigin)+'/">').replace('<body>','<body><div class="preview-banner">Unpublished preview</div>')});
     }else if(path==='/admin/upload'&&request.method==='POST'){
      await rate(db,user,'upload',10);
      if(request.headers.get('X-Media-Rights')!=='confirmed')throw new Problem('Confirm media publishing rights.');
