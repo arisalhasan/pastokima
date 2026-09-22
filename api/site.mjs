@@ -15,7 +15,7 @@ export default async function handler(req,res){
  try{
   const response=await fetch(base+'/public/state',{signal:AbortSignal.timeout(8000),cache:'no-store'});if(!response.ok)throw new Error('Content unavailable');
   const {values}=await response.json();let html=render(path,values);
-  html=html.replace(/<meta name="robots"[^>]*>/g,'').replace('</head>',`<link rel="canonical" href="https://pastokima.com${path}"></head>`);
+  html=html.replace(/<meta name="robots"[^>]*>/g,'').replaceAll('https://pas-to-kima-seaside-prototype.arisinglefatherof5.chatgpt.site','https://pastokima.com').replace('</head>',`<link rel="canonical" href="https://pastokima.com${path}"></head>`);
   res.setHeader('Content-Type','text/html; charset=utf-8');res.setHeader('Cache-Control','public, max-age=0, must-revalidate');
   res.end(req.method==='HEAD'?undefined:html);
  }catch{res.statusCode=503;res.setHeader('Retry-After','30');res.setHeader('Cache-Control','no-store');res.end('The website is temporarily unavailable. Please try again shortly.');}
